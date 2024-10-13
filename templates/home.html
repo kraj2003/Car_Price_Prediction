@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Car Price Prediction</h1>
+
+    <form action="{{url_for('predict_data')}}" method="post">
+        <input type="text" name="Present_Price" placeholder="Present Price" required="required"/>
+        <input type="text" name="Kms_Driven" placeholder="Kms Driven" required="required"/>
+        <div class="mb-3">
+            <!-- <label class="form-label">Gender</label> -->
+            <select class="form-control" name="Fuel_Type" placeholder="Fuel Type" required>
+                <option class="placeholder" selected disabled value="">Select fuel type</option>
+                <option value="1">
+                    Diesel
+                </option>
+                <option value="2">
+                    Petrol
+                </option>
+                <option value="0">
+                    CNG
+                </option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <!-- <label class="form-label">Gender</label> -->
+            <select class="form-control" name="Seller_Type" placeholder="Enter Seller_Type" required>
+                <option class="placeholder" selected disabled value="">Select Sellerr Type</option>
+                <option value="1">
+                    Individual
+                </option>
+                <option value="0">
+                    Dealer
+                </option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <!-- <label class="form-label">Gender</label> -->
+            <select class="form-control" name="Transmission" placeholder="Enter Transmission" required>
+                <option class="placeholder" selected disabled value="">Select Transmission</option>
+                <option value="1">
+                    Manual
+                </option>
+                <option value="0">
+                    Automatic
+                </option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <!-- <label class="form-label">Gender</label> -->
+            <select class="form-control" name="Owner" placeholder="Enter Owner" required>
+                <option class="placeholder" selected disabled value="">Select Owner</option>
+                <option value="0">
+                    0
+                </option>
+                <option value="1">
+                    1
+                </option>
+                <option value="3">
+                    3
+                </option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict your car price" required />
+        </div>
+
+        <h2>
+            THE  prediction is {{results}}
+        </h2>
+    </form>
+</body>
+</html>
